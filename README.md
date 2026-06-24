@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f0c29,50:302b63,100:24243e&height=200&section=header&text=Network%20Intrusion%20Detection&fontSize=36&fontColor=ffffff&fontAlignY=38&desc=KDD%20Cup%2099%20%7C%20Random%20Forest%20%7C%2099.96%25%20Accuracy&descAlignY=58&descSize=16"/>
+ 
 </div>
 
 <div align="center">
@@ -164,6 +164,5 @@ Malla Reddy Institute of Technology & Science, Hyderabad
 
 [![GitHub](https://img.shields.io/badge/GitHub-AkshayEtukuri-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/AkshayEtukuri)
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:24243e,50:302b63,100:0f0c29&height=100&section=footer"/>
 
 </div>
