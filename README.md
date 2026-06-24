@@ -1,7 +1,14 @@
 <div align="center">
- <div align="center">
-<img src="https://img.shields.io/badge/KDD%20Cup%2099-Network%20Intrusion%20Detection-0f0c29?style=for-the-badge&logoColor=white"/>
-<img src="https://img.shields.io/badge/Random%20Forest-99.96%25%20Accuracy-302b63?style=for-the-badge"/>
+
+# 🛡️ KDD Cup 99 — Network Intrusion Detection
+
+[![Python](https://img.shields.io/badge/Python-3.13-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![scikit-learn](https://img.shields.io/badge/scikit--learn-1.x-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org)
+[![Pandas](https://img.shields.io/badge/Pandas-2.x-150458?style=for-the-badge&logo=pandas&logoColor=white)](https://pandas.pydata.org)
+[![Matplotlib](https://img.shields.io/badge/Matplotlib-3.x-11557C?style=for-the-badge)](https://matplotlib.org)
+
+**A machine learning system that classifies network traffic into 20 attack categories with 99.96% accuracy using Random Forest on the KDD Cup 1999 benchmark dataset.**
+
 </div>
 
 <div align="center">
