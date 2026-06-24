@@ -167,7 +167,7 @@ KDD-Intrusion-Detection/
 
 **Akshay Etukuri**
 <br/>
-B.Tech CSE (Networks specialization) — Malla Reddy Institute of Technology & Science, Hyderabad
+AI/ML Enthusiast · Hyderabad, India
 
 <br/><br/>
 
