@@ -1,10 +1,12 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score, classification_report
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 
 # 1. Load the data
+print("Loading data...")
 file_path = 'KDD_Cup_Data/kddcup.data_10_percent.gz'
 df = pd.read_csv(file_path, header=None, compression='gzip')
 
@@ -20,35 +22,43 @@ columns = ["duration", "protocol_type", "service", "flag", "src_bytes", "dst_byt
 df.columns = columns
 
 # 3. Preprocess
+print("Processing categorical data...")
 df = pd.get_dummies(df, columns=['protocol_type', 'service', 'flag'])
 X = df.drop('target', axis=1)
 y = df['target']
 
 # 4. Train
+print("Training model...")
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 model = RandomForestClassifier(n_estimators=10, n_jobs=-1)
 model.fit(X_train, y_train)
+print("Model Training Complete.")
 
-# 5. Evaluate and Print Report
+# 5. Evaluate
 predictions = model.predict(X_test)
 print(f"Model Accuracy: {accuracy_score(y_test, predictions):.4f}")
 print("\nDetailed Performance Report:")
-print(classification_report(y_test, predictions))
+print(classification_report(y_test, predictions, zero_division=0))
 
-# 6. Show Feature Importance Chart
+# 6. Feature Importance Chart
 importances = pd.Series(model.feature_importances_, index=X.columns)
 importances.nlargest(10).plot(kind='barh')
 plt.title("Top 10 Important Features")
-plt.show()
+plt.tight_layout()
+plt.savefig('feature_importance.png', bbox_inches='tight')
+plt.clf()
+print("Saved: feature_importance.png")
 
-
-from sklearn.metrics import confusion_matrix
-import seaborn as sns
-
-# Generate the confusion matrix
+# 7. Confusion Matrix
 cm = confusion_matrix(y_test, predictions)
+plt.figure(figsize=(14, 10))
 sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
 plt.title("Confusion Matrix")
 plt.xlabel("Predicted")
 plt.ylabel("Actual")
-plt.show()
+plt.tight_layout()
+plt.savefig('confusion_matrix.png', bbox_inches='tight')
+plt.clf()
+print("Saved: confusion_matrix.png")
+
+print("\nDone! All outputs saved.")
