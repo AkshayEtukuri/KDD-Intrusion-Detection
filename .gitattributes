@@ -1,0 +1,5 @@
+*.gz filter=lfs diff=lfs merge=lfs -text
+KDD_Cup_Data/kddcup.data.corrected filter=lfs diff=lfs merge=lfs -text
+KDD_Cup_Data/kddcup.testdata.unlabeled filter=lfs diff=lfs merge=lfs -text
+KDD_Cup_Data/kddcup.data/kddcup.data filter=lfs diff=lfs merge=lfs -text
+KDD_Cup_Data/kddcup.data_10_percent/kddcup.data_10_percent filter=lfs diff=lfs merge=lfs -text
