@@ -2,11 +2,6 @@
 
 # 🛡️ KDD Cup 99 — Network Intrusion Detection
 
-[![Python](https://img.shields.io/badge/Python-3.13-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
-[![scikit-learn](https://img.shields.io/badge/scikit--learn-1.x-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org)
-[![Pandas](https://img.shields.io/badge/Pandas-2.x-150458?style=for-the-badge&logo=pandas&logoColor=white)](https://pandas.pydata.org)
-[![Matplotlib](https://img.shields.io/badge/Matplotlib-3.x-11557C?style=for-the-badge)](https://matplotlib.org)
-
 **A machine learning system that classifies network traffic into 20 attack categories with 99.96% accuracy using Random Forest on the KDD Cup 1999 benchmark dataset.**
 
 </div>
@@ -19,10 +14,9 @@
 [![Seaborn](https://img.shields.io/badge/Seaborn-4C72B0?style=for-the-badge)](https://seaborn.pydata.org)
 [![Status](https://img.shields.io/badge/Status-Complete-00C853?style=for-the-badge)]()
 [![Accuracy](https://img.shields.io/badge/Accuracy-99.96%25-blueviolet?style=for-the-badge)]()
+[![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)]()
 
 <br/>
-
-> **Classifying network traffic into 20 attack categories using Machine Learning on the KDD Cup 1999 benchmark — one of the most widely used datasets in cybersecurity AI research.**
 
 </div>
 
@@ -97,18 +91,22 @@ Raw Network Traffic (.gz)
 
 ## 📊 Visualizations
 
+<div align="center">
+
 <table>
   <tr>
     <td align="center">
-      <b>🔑 Top 10 Most Important Features</b><br/>
-      <img src="feature_importance.png" width="420"/>
+      <b>🔑 Top 10 Most Important Features</b><br/><br/>
+      <img src="feature_importance.png" width="460"/>
     </td>
     <td align="center">
-      <b>🔲 Confusion Matrix (20 Classes)</b><br/>
-      <img src="confusion_matrix.png" width="420"/>
+      <b>🔲 Confusion Matrix (20 Classes)</b><br/><br/>
+      <img src="confusion_matrix.png" width="500"/>
     </td>
   </tr>
 </table>
+
+</div>
 
 ---
 
@@ -163,15 +161,23 @@ KDD-Intrusion-Detection/
 
 ---
 
-<div align="center">
-
 ## 👤 Author
 
+<div align="center">
+
 **Akshay Etukuri**
-B.Tech CSE (Networks specialization)
-Malla Reddy Institute of Technology & Science, Hyderabad
+<br/>
+B.Tech CSE (Networks specialization) — Malla Reddy Institute of Technology & Science, Hyderabad
 
-[![GitHub](https://img.shields.io/badge/GitHub-AkshayEtukuri-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/AkshayEtukuri)
+<br/><br/>
 
+![GitHub](https://img.shields.io/badge/GitHub-AkshayEtukuri-181717?style=flat-square&logo=github&logoColor=white)
+![Made with Python](https://img.shields.io/badge/Made%20with-Python-FFD43B?style=flat-square&logo=python)
+![ML Portfolio](https://img.shields.io/badge/ML-Portfolio%20Project-302b63?style=flat-square)
+![Germany MS](https://img.shields.io/badge/Goal-Germany%20MS%202027-black?style=flat-square)
+
+<br/>
+
+> 🚀 *Live demo coming soon via Streamlit Cloud*
 
 </div>
