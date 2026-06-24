@@ -1,110 +1,174 @@
+a bit more mordern
+
+5:17 PM
+Here's a more modern, striking version:
+
+markdown
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f0c29,50:302b63,100:24243e&height=200&section=header&text=Network%20Intrusion%20Detection&fontSize=36&fontColor=ffffff&fontAlignY=38&desc=KDD%20Cup%2099%20%7C%20Random%20Forest%20%7C%2099.96%25%20Accuracy&descAlignY=58&descSize=16"/>
+</div>
+
 <div align="center">
 
-# 🛡️ KDD Cup 99 — Network Intrusion Detection
+[![Python](https://img.shields.io/badge/Python_3.13-FFD43B?style=for-the-badge&logo=python&logoColor=blue)](https://python.org)
+[![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org)
+[![Pandas](https://img.shields.io/badge/Pandas-2C2D72?style=for-the-badge&logo=pandas&logoColor=white)](https://pandas.pydata.org)
+[![Seaborn](https://img.shields.io/badge/Seaborn-4C72B0?style=for-the-badge)](https://seaborn.pydata.org)
+[![Status](https://img.shields.io/badge/Status-Complete-00C853?style=for-the-badge)]()
+[![Accuracy](https://img.shields.io/badge/Accuracy-99.96%25-blueviolet?style=for-the-badge)]()
 
-[![Python](https://img.shields.io/badge/Python-3.13-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
-[![scikit-learn](https://img.shields.io/badge/scikit--learn-1.x-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org)
-[![Pandas](https://img.shields.io/badge/Pandas-2.x-150458?style=for-the-badge&logo=pandas&logoColor=white)](https://pandas.pydata.org)
-[![Matplotlib](https://img.shields.io/badge/Matplotlib-3.x-11557C?style=for-the-badge)](https://matplotlib.org)
+<br/>
 
-**A machine learning system that classifies network traffic into 20 attack categories with 99.96% accuracy using Random Forest on the KDD Cup 1999 benchmark dataset.**
+> **Classifying network traffic into 20 attack categories using Machine Learning on the KDD Cup 1999 benchmark — one of the most widely used datasets in cybersecurity AI research.**
 
 </div>
 
 ---
 
-## 📊 Results
+## ⚡ Results at a Glance
 
 <div align="center">
+╔══════════════════════════════════════════════════════╗
+║ MODEL PERFORMANCE ║
+╠══════════════════════╦═══════════════════════════════╣
+║ Accuracy ║ 99.96% ║
+║ Weighted F1-Score ║ 1.00 ║
+║ Test Samples ║ 98,805 ║
+║ Algorithm ║ Random Forest (n=10 trees) ║
+║ Features ║ 41 network traffic features ║
+║ Attack Classes ║ 20 (normal + 19 attack types)║
+╚══════════════════════╩═══════════════════════════════╝
 
-| Metric | Score |
-|:---:|:---:|
-| ✅ Accuracy | **99.96%** |
-| 📈 Weighted F1-Score | **1.00** |
-| 🧪 Test Samples | **98,805** |
-| 🌳 Algorithm | **Random Forest** |
 
 </div>
 
 ---
 
-## 🎯 Attack Types Detected
+## 🧠 How It Works
+Raw Network Traffic (.gz)
+│
+▼
+┌─────────────┐
+│ Load CSV │ ← pandas read_csv with compression
+└──────┬──────┘
+│
+▼
+┌─────────────────────┐
+│ Feature Engineering│ ← One-hot encode protocol_type, service, flag
+└──────────┬──────────┘
+│
+▼
+┌─────────────────────┐
+│ Train/Test Split │ ← 80% train / 20% test (random_state=42)
+└──────────┬──────────┘
+│
+▼
+┌──────────────────────┐
+│ Random Forest Model │ ← n_estimators=10, n_jobs=-1
+└──────────┬───────────┘
+│
+▼
+┌──────────────────────────────┐
+│ Accuracy + Classification │ ← 99.96% accuracy across 20 classes
+│ Report + Confusion Matrix │
+└──────────────────────────────┘
+
+
+---
+
+## 🎯 Attack Categories Classified
 
 <div align="center">
 
-`neptune` `smurf` `back` `satan` `ipsweep` `portsweep` `warezclient` `teardrop` `pod` `nmap` `guess_passwd` `buffer_overflow` `warezmaster` `imap` `ftp_write` `multihop` `perl` `land` `normal` + more
+| Category | Attack Types |
+|:---:|:---|
+| 🔴 DoS | `neptune` `smurf` `back` `teardrop` `pod` `land` |
+| 🟠 Probe | `ipsweep` `portsweep` `nmap` `satan` |
+| 🟡 R2L | `warezclient` `warezmaster` `guess_passwd` `imap` `ftp_write` `multihop` |
+| 🔵 U2R | `buffer_overflow` `perl` `loadmodule` |
+| 🟢 Normal | `normal` |
 
 </div>
 
 ---
 
-## 📈 Visualizations
+## 📊 Visualizations
 
 <table>
   <tr>
-    <td align="center"><b>🔑 Top 10 Important Features</b></td>
-    <td align="center"><b>🔲 Confusion Matrix</b></td>
-  </tr>
-  <tr>
-    <td><img src="feature_importance.png" width="400"/></td>
-    <td><img src="confusion_matrix.png" width="400"/></td>
+    <td align="center">
+      <b>🔑 Top 10 Most Important Features</b><br/>
+      <img src="feature_importance.png" width="420"/>
+    </td>
+    <td align="center">
+      <b>🔲 Confusion Matrix (20 Classes)</b><br/>
+      <img src="confusion_matrix.png" width="420"/>
+    </td>
   </tr>
 </table>
 
 ---
 
-## 🗂️ Dataset
-
-| Property | Detail |
-|---|---|
-| Source | [KDD Cup 1999 — UCI ML Repository](http://kdd.ics.uci.edu/databases/kddcup99/kddcup99.html) |
-| Subset Used | 10% training data (~494,000 records) |
-| Features | 41 network traffic features |
-| Classes | 20 (normal + 19 attack types) |
-
-> ⚠️ Dataset not included due to size. Download from the link above and place in `KDD_Cup_Data/`.
-
----
-
-## ⚙️ Tech Stack
-
-| Tool | Purpose |
-|---|---|
-| `scikit-learn` | Random Forest classifier, metrics |
-| `pandas` | Data loading & preprocessing |
-| `matplotlib` | Feature importance chart |
-| `seaborn` | Confusion matrix heatmap |
-
----
-
-## 🚀 How to Run
+## 🚀 Quick Start
 
 ```bash
-# 1. Clone the repo
+# Clone
 git clone https://github.com/AkshayEtukuri/KDD-Intrusion-Detection.git
 cd KDD-Intrusion-Detection
 
-# 2. Install dependencies
+# Install
 pip install pandas scikit-learn matplotlib seaborn
 
-# 3. Download dataset from UCI and place in KDD_Cup_Data/
-#    Required file: KDD_Cup_Data/kddcup.data_10_percent.gz
+# Download dataset → place in KDD_Cup_Data/
+# http://kdd.ics.uci.edu/databases/kddcup99/kddcup99.html
+# Required: KDD_Cup_Data/kddcup.data_10_percent.gz
 
-# 4. Run
+# Run
 python project.py
+# Saves: feature_importance.png + confusion_matrix.png
 ```
-
-Outputs saved: `feature_importance.png` · `confusion_matrix.png`
 
 ---
 
-## 👤 Author
+## 🗂️ Project Structure
+KDD-Intrusion-Detection/
+│
+├── project.py ← Main ML pipeline
+├── feature_importance.png ← Top 10 features chart
+├── confusion_matrix.png ← 20-class confusion matrix
+├── .gitignore ← Dataset excluded (too large)
+└── README.md
+
+
+---
+
+## 🛠️ Tech Stack
 
 <div align="center">
 
-**Akshay Etukuri**
-B.Tech CSE (Networks) — Malla Reddy Institute of Technology & Science
-
-[![GitHub](https://img.shields.io/badge/GitHub-AkshayEtukuri-181717?style=for-the-badge&logo=github)](https://github.com/AkshayEtukuri)
+| Library | Version | Use |
+|:---:|:---:|:---|
+| `pandas` | 2.x | Data loading, preprocessing |
+| `scikit-learn` | 1.x | Random Forest, metrics, train/test split |
+| `matplotlib` | 3.x | Feature importance visualization |
+| `seaborn` | 0.x | Confusion matrix heatmap |
+| `Python` | 3.13 | Core language |
 
 </div>
+
+---
+
+<div align="center">
+
+## 👤 Author
+
+**Akshay Etukuri**
+B.Tech CSE (Networks specialization)
+Malla Reddy Institute of Technology & Science, Hyderabad
+
+[![GitHub](https://img.shields.io/badge/GitHub-AkshayEtukuri-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/AkshayEtukuri)
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:24243e,50:302b63,100:0f0c29&height=100&section=footer"/>
+
+</div>
+
