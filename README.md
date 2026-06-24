@@ -1,9 +1,3 @@
-a bit more mordern
-
-5:17 PM
-Here's a more modern, striking version:
-
-markdown
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f0c29,50:302b63,100:24243e&height=200&section=header&text=Network%20Intrusion%20Detection&fontSize=36&fontColor=ffffff&fontAlignY=38&desc=KDD%20Cup%2099%20%7C%20Random%20Forest%20%7C%2099.96%25%20Accuracy&descAlignY=58&descSize=16"/>
 </div>
@@ -28,51 +22,51 @@ markdown
 ## ⚡ Results at a Glance
 
 <div align="center">
-╔══════════════════════════════════════════════════════╗
-║ MODEL PERFORMANCE ║
-╠══════════════════════╦═══════════════════════════════╣
-║ Accuracy ║ 99.96% ║
-║ Weighted F1-Score ║ 1.00 ║
-║ Test Samples ║ 98,805 ║
-║ Algorithm ║ Random Forest (n=10 trees) ║
-║ Features ║ 41 network traffic features ║
-║ Attack Classes ║ 20 (normal + 19 attack types)║
-╚══════════════════════╩═══════════════════════════════╝
 
+| Metric | Score |
+|:---|:---|
+| ✅ Accuracy | **99.96%** |
+| 📈 Weighted F1-Score | **1.00** |
+| 🧪 Test Samples | **98,805** |
+| 🌳 Algorithm | **Random Forest (n=10 trees)** |
+| 🔢 Features | **41 network traffic features** |
+| 🎯 Classes | **20 (normal + 19 attack types)** |
 
 </div>
 
 ---
 
 ## 🧠 How It Works
-Raw Network Traffic (.gz)
-│
-▼
-┌─────────────┐
-│ Load CSV │ ← pandas read_csv with compression
-└──────┬──────┘
-│
-▼
-┌─────────────────────┐
-│ Feature Engineering│ ← One-hot encode protocol_type, service, flag
-└──────────┬──────────┘
-│
-▼
-┌─────────────────────┐
-│ Train/Test Split │ ← 80% train / 20% test (random_state=42)
-└──────────┬──────────┘
-│
-▼
-┌──────────────────────┐
-│ Random Forest Model │ ← n_estimators=10, n_jobs=-1
-└──────────┬───────────┘
-│
-▼
-┌──────────────────────────────┐
-│ Accuracy + Classification │ ← 99.96% accuracy across 20 classes
-│ Report + Confusion Matrix │
-└──────────────────────────────┘
 
+```
+Raw Network Traffic (.gz)
+         │
+         ▼
+  ┌─────────────┐
+  │  Load CSV   │  ← pandas read_csv with compression
+  └──────┬──────┘
+         │
+         ▼
+  ┌─────────────────────┐
+  │  Feature Engineering│  ← One-hot encode protocol_type, service, flag
+  └──────────┬──────────┘
+         │
+         ▼
+  ┌─────────────────────┐
+  │   Train/Test Split  │  ← 80% train / 20% test (random_state=42)
+  └──────────┬──────────┘
+         │
+         ▼
+  ┌──────────────────────┐
+  │  Random Forest Model │  ← n_estimators=10, n_jobs=-1
+  └──────────┬───────────┘
+         │
+         ▼
+  ┌──────────────────────────────┐
+  │  Accuracy + Classification   │  ← 99.96% accuracy across 20 classes
+  │  Report + Confusion Matrix   │
+  └──────────────────────────────┘
+```
 
 ---
 
@@ -131,14 +125,16 @@ python project.py
 ---
 
 ## 🗂️ Project Structure
+
+```
 KDD-Intrusion-Detection/
 │
-├── project.py ← Main ML pipeline
-├── feature_importance.png ← Top 10 features chart
-├── confusion_matrix.png ← 20-class confusion matrix
-├── .gitignore ← Dataset excluded (too large)
+├── project.py                  ← Main ML pipeline
+├── feature_importance.png      ← Top 10 features chart
+├── confusion_matrix.png        ← 20-class confusion matrix
+├── .gitignore                  ← Dataset excluded (too large)
 └── README.md
-
+```
 
 ---
 
@@ -171,4 +167,3 @@ Malla Reddy Institute of Technology & Science, Hyderabad
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:24243e,50:302b63,100:0f0c29&height=100&section=footer"/>
 
 </div>
-
